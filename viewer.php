@@ -26,7 +26,7 @@ echo getconfig("config.txt", "标题:");
 </a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="publish.php">发布</a>
+<a class="nav-link" href="submit.php">发布</a>
 </li>
 </ul>
 <form class="d-flex" action="search.php" method="get">

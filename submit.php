@@ -9,12 +9,12 @@ echo $id;
 if(is_dir("data/" . $id)) {
 id();
 } else {
-echo "执行publish()<br />";
-publish($id);
+echo "执行submit()<br />";
+submit($id);
 }
 }
-function publish($id) {
-echo "开始执行publish()<br />";
+function submit($id) {
+echo "开始执行submit()<br />";
 mkdir("data/" . $id, 0777, true);
 echo "创建文件夹data/$id<br />";
 file_put_contents("data/" . $id . "/contents.md", str_replace("<?php", "-----", $_POST["contents"]));
@@ -59,7 +59,7 @@ echo getconfig("config.txt", "标题:");
 </a>
 </li>
 <li class="nav-item">
-<a class="nav-link active" href="publish.php">发布</a>
+<a class="nav-link active" href="submit.php">发布</a>
 </li>
 </ul>
 <form class="d-flex" action="search.php" method="get">
@@ -71,7 +71,7 @@ echo getconfig("config.txt", "标题:");
 </nav>
 <h1>发布您的内容</h1>
 <h2>尽情编写，无需审核，支持Markdown。普通用户无法删除和修改，请仔细检查。</h2>
-<form action="publish.php" method="post">
+<form action="submit.php" method="post">
 <input class="m-3" name="title" rows="1" style="height: 5vh;width: calc(100vw - 2rem);" placeholder="标题"></input>
 <textarea class="form-control m-3" name="contents" rows="99999999999999999999999" style="height: 50vh;width: calc(100vw - 2rem);" placeholder="内容"></textarea>
 <div class="d-grid gap-2">
